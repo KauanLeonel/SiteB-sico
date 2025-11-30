@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <main class="card" aria-labelledby="title">
+    <h1 id="title">Cadastro de Usuário</h1>
+    <p class="lead">Crie um usuário com nome, email, CPF e senha.</p>
+
+    <form id="signupForm" autocomplete="off" novalidate>
+      <label for="name">Nome</label>
+      <input id="name" name="name" type="text" placeholder="Seu nome" required minlength="3" maxlength="255" />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="email@exemplo.com" required />
+
+      <label for="cpf">CPF</label>
+      <input id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="12345678900" maxlength="11" required />
+
+      <label for="password">Senha</label>
+      <div style="position:relative">
+        <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" maxlength="255" />
+        <button type="button" id="togglePwd" class="toggle" style="position:absolute;right:8px;top:8px">mostrar</button>
+      </div>
+
+      <div class="inline">
+        <input id="terms" type="checkbox" />
+        <label for="terms" style="margin:0;font-size:13px" class="small">Aceito os termos</label>
+      </div>
+
+      <button id="submitBtn" type="submit">Cadastrar</button>
+
+      <div id="messageArea" aria-live="polite"></div>
+    </form>
+
+    <p class="foot">Teste usando sua API em <code>POST /users</code>. <small>Se seu servidor roda em outra porta ou host, edite o endpoint no JS abaixo.</small></p>
+  </main>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
