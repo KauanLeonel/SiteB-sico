@@ -14,20 +14,22 @@ export class FinalizarCadastroService {
     }
 
     // 2. Criar documentos
+    // NOTE: no seu schema 'Docs' usa userCpf como FK, não userId.
     const docs = await prisma.docs.create({
       data: {
         rg,
         cnh,
-        userId: user.id
+        userCpf: user.cpf   // usar o campo correto do schema
       }
     });
 
     // 3. Criar endereço
+    // NOTE: Address também usa userCpf no seu schema.
     const address = await prisma.address.create({
       data: {
         bairro,
         rua,
-        userId: user.id
+        userCpf: user.cpf   // usar o campo correto do schema
       }
     });
 

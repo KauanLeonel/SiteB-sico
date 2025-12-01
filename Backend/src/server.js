@@ -10,9 +10,9 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/user", userRouter)
-app.use("/export", exportRoutes);
-app.use("/download", downloadRoute);
+app.use("/user", userRouter) //Usuário
+app.use("/export", exportRoutes); //Exportar
+app.use("/download", downloadRoute); //Download
 app.listen(port, ()=>{
     console.log("Servidor aberto")
 })
