@@ -1,4 +1,4 @@
-import { FinalizarCadastroService } from "../services/User/FinalizarCadastroService";
+import { FinalizarCadastroService } from "../services/User/FinalizarCadastroService.js";
 
 export class FinalizarCadastroController {
   async handle(req, res) {
